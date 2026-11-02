@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230b6bcb'><path d='M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5v-11zm6 3v5l4.5-2.5L10 9.5z'/></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Replicator - Video Composite &amp; Audio Sync</title>
+    <meta name="description" content="Composite multiple video clips, transparent PNG overlays, and title cards looped to perfectly match an audio track into a YouTube-ready MP4." />
+    <meta property="og:title" content="Replicator - Video Composite &amp; Audio Sync" />
+    <meta property="og:description" content="Composite multiple video clips, transparent PNG overlays, and title cards looped to perfectly match an audio track into a YouTube-ready MP4." />
+    <script>
+      // Protect window.fetch against browser extensions that attempt to overwrite it with getters/setters
+      (function() {
+        try {
+          var originalFetch = window.fetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function() { return originalFetch; },
+            set: function(fn) { originalFetch = fn; },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {}
+
+        // Suppress unhandled extension interceptor errors from crashing app
+        window.addEventListener('error', function(e) {
+          if (e && e.message && e.message.indexOf('fetch of #<Window>') !== -1) {
+            if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+            if (e.preventDefault) e.preventDefault();
+            return true;
+          }
+        }, true);
+      })();
+    </script>
+  </head>
+  <body class="bg-[#f6f7f9] text-[#171a1f] antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

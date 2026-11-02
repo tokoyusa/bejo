@@ -1,0 +1,6 @@
+{
+  "name": "Replicator - Video Composite & Audio Sync",
+  "description": "Composite multiple video clips, transparent PNG overlays, and title cards looped to perfectly match an audio track into a YouTube-ready MP4.",
+  "permissions": [],
+  "capabilities": []
+}
